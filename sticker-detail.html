@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>รายละเอียดสติ๊กเกอร์</title>
+
+<style>
+body {
+  font-family: 'Mitr', sans-serif;
+  background: linear-gradient(135deg, #fff8e1, #fff3c4);
+  margin: 0;
+  text-align: center;
+}
+
+/* หัวข้อ */
+h1 {
+  margin-top: 60px;
+  color: #b8860b;
+  font-size: 40px;
+  letter-spacing: 1px;
+}
+
+/* grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 25px;
+  padding: 40px;
+}
+
+/* card */
+.item {
+  background: white;
+  padding: 12px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* glow effect */
+.item::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,215,0,0.4), transparent);
+  top: -100%;
+  left: -100%;
+  transition: 0.5s;
+}
+
+/* hover */
+.item:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 15px 30px rgba(255, 215, 0, 0.4);
+}
+
+.item:hover::before {
+  top: 100%;
+  left: 100%;
+}
+
+/* รูป */
+.item img {
+  width: 100%;
+  border-radius: 15px;
+  transition: 0.3s;
+}
+
+.item:hover img {
+  transform: scale(1.1);
+}
+
+/* ปุ่มกลับ */
+.back {
+  display: inline-block;
+  margin: 40px;
+  padding: 14px 30px;
+  background: linear-gradient(45deg, gold, orange);
+  color: white;
+  border-radius: 15px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(255, 200, 0, 0.4);
+}
+
+.back:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px rgba(255, 200, 0, 0.6);
+}
+</style>
+
+</head>
+
+<body>
+
+<h1 id="title">สติ๊กเกอร์</h1>
+
+<div class="grid" id="grid"></div>
+
+<a class="back" onclick="goBack()">← กลับ</a>
+
+<script>
+function goBack() {
+  window.history.back();
+}
+
+const params = new URLSearchParams(window.location.search);
+const type = params.get("type");
+
+const data = {
+  "pp-gloss": ["imge/stkgloss5.jpg","imge/stkgloss5.jpg","imge/stkgloss5.jpg"],
+  "pp-matte": ["imge/stkgloss12.jpg","imge/stkgloss12.jpg"],
+  "paper": ["imge/stkgloss6.jpg","imge/stkgloss6.jpg"],
+  "clear": ["imge/stkgloss16.jpg","imge/stkgloss16.jpg"],
+  "white-ink": ["imge/stkgloss13.jpg","imge/stkgloss13.jpg"],
+  "3m": ["imge/stkgloss8.jpg","imge/stkgloss8.jpg"],
+  "gold": ["imge/stkgloss3.jpg","imge/stkgloss3.jpg"],
+  "silver": ["imge/stkgloss1.jpg","imge/stkgloss1.jpg"]
+};
+
+const titles = {
+  "pp-gloss": "สติ๊กเกอร์ PP เงา ✨",
+  "pp-matte": "สติ๊กเกอร์ PP ด้าน 🌸",
+  "paper": "สติ๊กเกอร์กระดาษ 📄",
+  "clear": "สติ๊กเกอร์ใส 💎",
+  "white-ink": "สติ๊กเกอร์หมึกขาว 🤍",
+  "3m": "สติ๊กเกอร์ 3M 🔥",
+  "gold": "สติ๊กเกอร์สีทอง 👑",
+  "silver": "สติ๊กเกอร์สีเงิน 🌟"
+};
+
+document.getElementById("title").innerText = titles[type] || "สติ๊กเกอร์";
+
+const grid = document.getElementById("grid");
+
+if (data[type]) {
+  data[type].forEach(img => {
+    grid.innerHTML += `
+      <div class="item">
+        <img src="${img}">
+      </div>
+    `;
+  });
+} else {
+  grid.innerHTML = "<p>ไม่พบข้อมูล</p>";
+}
+</script>
+
+</body>
+</html>

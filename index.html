@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticker Pro</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      corePlugins: { preflight: false },
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Prompt', 'sans-serif'] },
+          colors: { fb: { 400: '#1877F2', 500: '#166FE5', 600: '#0E52B5' } },
+          animation: {
+            'float': 'float 6s ease-in-out infinite',
+            'float-delayed': 'float 6s ease-in-out 3s infinite',
+            'pulse-glow': 'pulse-glow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+          },
+          keyframes: {
+            float: { '0%, 100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-20px)' } },
+            'pulse-glow': { '0%, 100%': { opacity: 1, transform: 'scale(1)' }, '50%': { opacity: .8, transform: 'scale(1.05)' } }
+          }
+        }
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<div class="navbar">
+  <div class="logo">Sticker Pro</div>
+  <div class="nav-links">
+    <a href="#hero" class="active">หน้าหลัก</a>
+    <a href="#product">สินค้า</a>
+<a href="#order-steps">ขั้นตอนการสั่ง</a>
+    <a href="#footer">ติดต่อ</a>
+  </div>
+</div>
+<section class="hero" id="hero">
+  <img src="ปกกกกกกก (1).png" class="cover" alt="cover">
+
+<div class="line-btn" onclick="addLine()">
+  <img src="line.png" class="line-icon">
+  ปรึกษาฟรี ทักเลย
+</div>
+</section>
+
+
+<!-- ===== SLIDER (อยู่นอก hero) ===== -->
+<div class="slider">
+  <div class="slides" id="slideTrack">
+    <div class="card"><img src="imge/stkgloss10.jpg"><div class="card-title">สติกเกอร์เงา/ด้าน</div></div>
+    <div class="card"><img src="สินค้า2.jpg"><div class="card-title">สติกเกอร์ไดคัท</div></div>
+    <div class="card"><img src="imge/stkgloss5.jpg"><div class="card-title">สติกเกอร์กันน้ำ</div></div>
+    <div class="card"><img src="imge/stkgloss7.jpg"><div class="card-title">PVC กันน้ำ</div></div>
+    <div class="card"><img src="imge/stkgloss6.jpg"><div class="card-title">ฟอยล์ทอง</div></div>
+        <div class="card"><img src="imge/stkgloss10.jpg"><div class="card-title">สติกเกอร์เงา/ด้าน</div></div>
+    <div class="card"><img src="imge/stkgloss8.jpg"><div class="card-title">สติกเกอร์ไดคัท</div></div>
+    <div class="card"><img src="สินค้า3.jpg"><div class="card-title">สติกเกอร์กันน้ำ</div></div>
+    <div class="card"><img src="imge/stkgloss7.jpg"><div class="card-title">PVC กันน้ำ</div></div>
+    <div class="card"><img src="imge/stkgloss6.jpg"><div class="card-title">ฟอยล์ทอง</div></div>
+    
+    <div class="card"><img src="imge/stkgloss10.jpg"><div class="card-title">สติกเกอร์เงา/ด้าน</div></div>
+    <div class="card"><img src="สินค้า2.jpg"><div class="card-title">สติกเกอร์ไดคัท</div></div>
+    <div class="card"><img src="imge/stkgloss5.jpg"><div class="card-title">สติกเกอร์กันน้ำ</div></div>
+    <div class="card"><img src="imge/stkgloss7.jpg"><div class="card-title">PVC กันน้ำ</div></div>
+    <div class="card"><img src="imge/stkgloss6.jpg"><div class="card-title">ฟอยล์ทอง</div></div>
+        <div class="card"><img src="imge/stkgloss10.jpg"><div class="card-title">สติกเกอร์เงา/ด้าน</div></div>
+    <div class="card"><img src="imge/stkgloss8.jpg"><div class="card-title">สติกเกอร์ไดคัท</div></div>
+    <div class="card"><img src="สินค้า3.jpg"><div class="card-title">สติกเกอร์กันน้ำ</div></div>
+    <div class="card"><img src="imge/stkgloss7.jpg"><div class="card-title">PVC กันน้ำ</div></div>
+    <div class="card"><img src="imge/stkgloss6.jpg"><div class="card-title">ฟอยล์ทอง</div></div>
+  </div>
+</div>
+<!-- ===== INFO SECTION ===== -->
+<section class="info-section">
+  <div class="info-text">
+    <h2>Sticker Pro</h2>
+    <p>สติ๊กเกอร์คุณภาพสูง คมชัด รองรับทุกงานพิมพ์ บริการผลิตสติกเกอร์และฉลากสินค้าแบบครบวงจร</p>
+    <p> พร้อมทีมกราฟิกดีไซน์มืออาชีพดูแลทุกขั้นตอน ช่วยยกระดับภาพลักษณ์สินค้าให้ดูโดดเด่น น่าสนใจ  </p>
+    <p>และจดจำได้ง่าย เพื่อเพิ่มโอกาสทางการตลาดและสร้างความประทับใจให้กับลูกค้าในระยะยาว</p>
+  </div>
+</section>
+<section class="info-section">
+
+  <img src="งาน1.jpg" class="info-image">
+
+</section>
+
+<!-- ===== STICKER MATERIAL SECTION ===== -->
+<section class="sticker-section">
+  <h2>วัสดุสติ๊กเกอร์ที่ตอบโจทย์แบรนด์คุณ</h2>
+  <p class="subtitle">เลือกวัสดุที่ใช่ เพิ่มความโดดเด่นให้สินค้า 💕</p>
+
+  <div class="sticker-grid">
+    <div class="sticker-card"><img src="แถบ1-01.jpg"><h3>PP เงา</h3><p>Glossy PP Sticker</p><p>ผิวเงาสวย กันน้ำ สีคมชัด เหมาะกับสินค้าทั่วไป</p></div>
+    <div class="sticker-card"><img src="แถบ1-01.jpg"><h3>PP ด้าน</h3><p>Matte PP Sticker</p><p>ผิวด้านเรียบหรู ไม่สะท้อนแสง ดูพรีเมียม</p></div>
+    <div class="sticker-card"><img src="แถบ1-01.jpg"><h3>สติ๊กเกอร์กระดาษ</h3><p>Paper Sticker</p><p>ประหยัด เหมาะสำหรับงานแพ็กเกจและฉลากทั่วไป</p></div>
+    <div class="sticker-card"><img src="แถบ1-01.jpg"><h3>สติ๊กเกอร์ใส</h3><p>Transparent Sticker</p><p>พื้นใส โชว์สินค้าได้ชัด ดูสะอาดตา</p></div>
+    <div class="sticker-card"><img src="แถบ1-01.jpg"><h3>สติ๊กเกอร์ใสหมึกขาว</h3><p>White Ink Transparent Sticker</p><p>พิมพ์หมึกขาว สีเด่นชัด แม้พื้นหลังโปร่งใส</p></div>
+    <div class="sticker-card"><img src="แถบ1-01.jpg"><h3>สติ๊กเกอร์ 3M</h3><p>3M Premium Sticker</p><p>กาวคุณภาพสูง ทนแดด ทนน้ำ ติดแน่นพิเศษ</p></div>
+    <div class="sticker-card"><img src="แถบ1-01.jpg"><h3>สติ๊กเกอร์สีทอง</h3><p>Gold Foil Sticker</p><p>เพิ่มความหรูหรา สะดุดตา ยกระดับแบรนด์</p></div>
+    <div class="sticker-card"><img src="แถบ1-01.jpg"><h3>สติ๊กเกอร์สีเงิน</h3><p>Silver Foil Sticker</p><p>เงางาม ทันสมัย เหมาะกับงานดีไซน์พรีเมียม</p></div>
+    <div class="sticker-card"><img src="แถบ1-01.jpg"><h3>โฮโลแกรม</h3><p>Hologram Sticker</p><p>เอฟเฟกต์วิบวับ เล่นแสง โดดเด่นสะดุดตา</p></div>
+  </div>
+</section>
+<!-- ===== LINE SECTION ===== -->
+<div class="line-section">
+  <div class="line-box">
+    <img src="แมวเกาะ.png" class="line-cat">
+    <div class="line-text">
+      <p class="status">● STATUS: ONLINE NOW</p>
+      <h1>สั่งงาน ผ่านไลน์</h1>
+      <p class="line-tagline">สะดวก รวดเร็ว Add เลย</p>
+      <p class="line-desc">ส่งไฟล์งานเพื่อประเมินราคาฟรี ทีมงานมืออาชีพพร้อมดูแล<br>ตั้งแต่ขั้นตอนแรกจนถึงจัดส่งถึงมือคุณ</p>
+      <div class="line-row">
+<a href="https://line.me/ti/p/@lemonprint" class="line-btn-cat">
+  แอดไลน์ @lemonprint
+</a>
+        <div class="service-hours">
+          <span class="clock-icon">🕐</span>
+          <div>
+            <span class="hours-label">SERVICE HOURS</span>
+            <span class="hours-time">08:30 - 17:30 น.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="line-qr">
+      <div class="qr-card">
+        <span class="new-badge">NEW</span>
+        <img src="QRline.png" alt="QR Code LINE">
+        <p>สแกนเพื่อเพิ่มเพื่อน</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===== VIDEO SECTION ===== -->
+<div class="video-section">
+  <div class="video-container">
+    <video autoplay muted loop id="myVideo">
+      <source src="Box_01_converted.mp4" type="video/mp4">
+    </video>
+    <div class="video-overlay">
+      <h2>สินค้าของเรา</h2>
+      <p>เลือกชมสินค้าคุณภาพจาก Sticker Pro</p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PRODUCT SECTION ===== -->
+<section class="product-section" id="product">
+  <div class="product-card"><span class="badge yellow">🔥 Hot</span><img src="imge/stkgloss6.jpg"><div class="content"><h3>สติ๊กเกอร์</h3><p>PP เงา/PP ด้าน/สติ๊กเกอร์กระดาษ ฯลฯ</p><button class="btn choose" onclick="goPage('stickers.html')">ดูรายละเอียด</button></div></div>
+  <div class="product-card"><span class="badge yellow">⭐ แนะนำ</span><img src="imge/menu a4-01.png"><div class="content"><h3>เมนู</h3><p>ติดพลาสวูด / ฟิวเจอร์บอร์ด</p><button class="btn choose" onclick="goPage('menu.html')">ดูรายละเอียด</button></div></div>
+  <div class="product-card"><img src="imge/บัตรพลาสติก-01.png"><div class="content"><h3>นามบัตร</h3><p>บัตรแข็ง/บัตรพลาสติก/บัตรสะสมแต้ม</p><button class="btn choose" onclick="goPage('business-card.html')">ดูรายละเอียด</button></div></div>
+  <div class="product-card"><img src="imge/การ์ดแต่ง-01-01.png"><div class="content"><h3>การ์ด</h3><p>เต๊นท์การ์ด</p><button class="btn choose" onclick="goPage('card.html')">ดูรายละเอียด</button></div></div>
+  <div class="product-card"><img src="imge/Brochure-01.png"><div class="content"><h3>โปสเตอร์</h3><p>โบรชัวร์ / แผ่นพับ</p><button class="btn choose" onclick="goPage('poster.html')">ดูรายละเอียด</button></div></div>
+  <div class="product-card"><img src="imge/Wristband-สายรัดข้อมือ-1.jpg"><div class="content"><h3>สายคาด</h3><p>สายคาดกล่อง / ริสแบรนด์ / สายรัดแขน</p><button class="btn choose" onclick="goPage('band.html')">ดูรายละเอียด</button></div></div>
+  <div class="product-card"><span class="badge green">⭐ แนะนำ</span><img src="imge/ป้าย.jpg"><div class="content"><h3>งานป้าย</h3><p>ไวนิล / ป้ายกองโจร / roll up / ขา X</p><button class="btn choose" onclick="goPage('sign.html')">ดูรายละเอียด</button></div></div>
+  <div class="product-card"><img src="imge/กล่อง.jpg"><div class="content"><h3>Packaging</h3><p>กล่อง / แฟ้ม / ที่แขวนประตู</p><button class="btn choose" onclick="goPage('packaging.html')">ดูรายละเอียด</button></div></div>
+  <div class="product-card"><img src="imge/กรวยไอศกรีม-01.png"><div class="content"><h3>บรรจุภัณฑ์อาหาร</h3><p>กระดาษไขรองขนม/กรวยไอติม/ซองแก้ว</p><button class="btn choose" onclick="goPage('food.html')">ดูรายละเอียด</button></div></div>
+  <div class="product-card"><img src="imge/แฟ้ม-01.png"><div class="content"><h3>หนังสือแบบฟอร์มธุรกิจ</h3><p>งานพิมพ์บิล / ใบส่งของ / ใบกำกับภาษี</p><button class="btn choose" onclick="goPage('document.html')">ดูรายละเอียด</button></div></div>
+  <div class="product-card"><img src="imge/stkgloss11.jpg"><div class="content"><h3>ภาพแคนวาส</h3><p>ตกแต่งร้าน / ของขวัญ</p><button class="btn choose" onclick="goPage('canvas.html')">ดูรายละเอียด</button></div></div>
+  <div class="product-card"><img src="imge/กล่องพัสดุ.jpg"><div class="content"><h3>กล่องพัสดุ</h3><p>กล่องลูกฟูก / กล่องส่งของ</p><button class="btn choose" onclick="goPage('box.html')">ดูรายละเอียด</button></div></div>
+</section>
+
+
+
+
+<div class="fb-banner-wrapper">
+    <div class="fb-banner-container">
+        
+        <!-- Main Banner Card (Panorama 32:10 Aspect Ratio on Large Desktop) -->
+        <div class="fb-card-v2 rounded-[2.5rem] relative overflow-hidden group w-full lg:aspect-[32/10] flex items-center min-h-[450px]">
+            
+            <!-- Abstract Background Elements -->
+            <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-white opacity-5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-400 opacity-10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/3 pointer-events-none"></div>
+
+            <div class="relative z-10 w-full h-full flex flex-col lg:flex-row items-center justify-between p-8 lg:px-24 lg:py-10 gap-10">
+                
+                <!-- Left: Text Content -->
+                <div class="flex-1 text-center lg:text-left text-white max-w-3xl z-20">
+                    <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 rounded-full px-4 py-1.5 mb-6 shadow-sm animate-pulse-glow">
+                        <span class="w-2.5 h-2.5 bg-blue-300 rounded-full shadow-[0_0_10px_#93c5fd]"></span>
+                        <span class="text-xs font-bold uppercase tracking-widest text-white">Messenger Online</span>
+                    </div>
+                    
+                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6 tracking-tight text-white drop-shadow-md">
+                       เช็คราคา <span class="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-blue-100 to-white">ดูรีวิวงานจริง</span>
+                        <span class="text-white lg:ml-2">สะดวก รวดเร็ว</span>
+                    </h2>
+                    
+                    <p class="text-blue-50 text-lg md:text-xl font-light mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
+                        ทักแชทสอบถามรายละเอียด ส่งไฟล์งาน หรือขอดูตัวอย่าง พร้อมให้บริการ
+                    </p> 
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+<div class="relative inline-block">
+    <a href="https://www.facebook.com/stickerpro2020/" target="_blank" 
+       class="messenger-btn flex items-center justify-center gap-3 bg-white text-fb-600 px-8 py-4 rounded-2xl font-bold text-lg shadow-[0_10px_20px_-5px_rgba(0,0,0,0.2)] transition-all duration-300 relative overflow-hidden"
+       rel="noopener">
+
+<i class="fa-brands fa-facebook-messenger text-2xl"></i>
+<span>Direct Message</span>
+
+<div class="emoji-float e1">💙</div>
+<div class="emoji-float e2">👍</div>ผ
+<div class="emoji-float e3">✨</div>
+<div class="emoji-float e4">😘</div>
+<div class="emoji-float e5">❤️</div>
+<div class="emoji-float e6">😮</div>
+    </a>
+</div>
+                        
+                        <div class="glass-panel px-6 py-4 rounded-2xl flex items-center justify-center gap-3 text-white font-medium hover:bg-white/20 transition-colors cursor-default">
+                            <div class="flex -space-x-2">
+                                <div class="w-6 h-6 rounded-full bg-blue-100 border-2 border-white flex items-center justify-center text-[10px] text-blue-600"><i class="fa-solid fa-thumbs-up"></i></div>
+                                <div class="w-6 h-6 rounded-full bg-red-100 border-2 border-white flex items-center justify-center text-[10px] text-red-500"><i class="fa-solid fa-heart"></i></div>
+                            </div>
+                            <div class="text-left leading-tight">
+                                <span class="block text-[10px] text-blue-100 uppercase">การันตีด้วยลูกค้ากว่า</span>
+                                <span class="text-xs font-bold"> 10,000+ แบรนด์</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Action Area (Phone Mockup) -->
+                <div class="relative w-full lg:w-auto flex justify-center lg:justify-end mt-8 lg:mt-0 h-full items-center">
+                    
+                    <!-- Decorative Floating Icons -->
+                    <div class="absolute -top-12 -left-16 text-5xl text-white/20 animate-float hidden lg:block">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                    </div>
+                    <div class="absolute bottom-0 -right-12 text-4xl text-yellow-300/30 animate-float-delayed hidden lg:block">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <!-- Phone Mockup (Scale .9 to fit panorama height) -->
+                    <div class="phone-mockup transform rotate-[-3deg] hover:rotate-0 transition-transform duration-500 z-10 origin-center lg:scale-90">
+                        <div class="w-full h-full bg-white relative flex flex-col">
+                            <!-- Messenger Header -->
+                            <div class="px-4 py-4 flex items-center gap-3 border-b border-gray-100 shadow-sm z-10 bg-white">
+<div class="w-9 h-9 rounded-full overflow-hidden shadow-md">
+    <img src="pro01.jpg" 
+         alt="logo" 
+         class="w-full h-full object-cover">
+</div>
+                                <div>
+                                    <div class="text-sm font-bold text-gray-900">sticker pro</div>
+                                    
+                                    <div class="text-[10px] text-gray-400 flex items-center gap-1"><span class="w-1.5 h-1.5 bg-green-500 rounded-full"></span> ใช้งานเมื่อสักครู่</div>
+                                </div>
+                                <i class="fa-solid fa-circle-info ml-auto text-fb-400 text-xl"></i>
+                            </div>
+
+                            <!-- Chat Area -->
+                            <div class="flex-1 p-4 bg-white overflow-hidden flex flex-col justify-end pb-4">
+                                <div class="msg-bubble-left animate-float" style="animation-delay: 0.5s">
+                                    สวัสดีค่ะ สนใจสั่งทำสติ๊กเกอร์
+                                </div>
+                                <div class="msg-bubble-right animate-float" style="animation-delay: 1s">
+                                    ยินดีให้บริการค่ะ 😊<br />ไม่ทราบว่าลูกค้ามีแบบแล้วหรือยังคะ?
+                                </div>
+                                <div class="msg-bubble-left animate-float" style="animation-delay: 1.5s">
+                                    มีแบบแล้วค่ะ อยากทราบราคาค่า
+                                </div>
+                                <div class="msg-bubble-right animate-float" style="animation-delay: 2s">
+                                    ได้เลยค่า รบกวนส่งไฟล์มาให้แอดมินดูนิดนึงนะคะพร้อมแจ้งรายละเอียดเพิ่มเติมนิดนึงค่า 👇
+
+                                </div>
+                                <div class="msg-bubble-left">
+
+                                <!-- Typing dot -->
+                                <div class="w-10 h-6 bg-gray-100 rounded-full ml-1 flex items-center justify-center gap-1">
+                                    <div class="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce"></div>
+                                    <div class="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.1s"></div>
+                                    <div class="w-1.5 h-1.5 bg-gray-400 rounded-full animate-bounce" style="animation-delay: 0.2s"></div>
+                                </div>
+                            </div>
+                            
+                            <!-- Input Area Mockup -->
+                            <div class="h-14 border-t border-gray-100 flex items-center px-4 gap-3">
+                                <i class="fa-solid fa-circle-plus text-fb-400 text-2xl"></i>
+                                <div class="flex-1 h-9 bg-gray-100 rounded-full flex items-center px-3 text-gray-400 text-xs">Aa</div>
+                                <i class="fa-solid fa-thumbs-up text-fb-400 text-2xl"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div></div>
+			</div>
+			</div>
+
+
+<section class="steps-section" id="order-steps">
+  <!-- แมว -->
+  <div class="steps-cat-wrap">
+    <div class="steps-cat-bubble">สั่งเลย!!</div>
+    <img src="แมวชี้.png" class="steps-cat" alt="cat">
+  </div>
+
+  <div class="steps-wrapper">
+    <!-- LEFT: TEXT -->
+     
+    <div class="steps-left">
+      <h2 class="steps-title">ขั้นตอนการสั่งสินค้า <span>ใน 5 ขั้นตอน</span></h2>
+      <p class="steps-sub">ไม่ต้องรู้เรื่องงานพิมพ์ เราดูแลให้ครบทุกขั้น</p>
+
+      <div class="steps-list">
+
+        <div class="step-row">
+          <div class="step-circle">1</div>
+          <div>
+            <h3>แจ้งรายละเอียดงาน</h3>
+            <p>แอดไลน์ส่งไฟล์งาน แจ้งขนาดและจำนวนที่ต้องการ</p>
+          </div>
+        </div>
+
+        <div class="step-row">
+          <div class="step-circle">2</div>
+          <div>
+            <h3>แจ้งที่อยู่</h3>
+            <p>ระบุข้อมูล ที่อยู่จัดส่งและเบอร์โทรศัพท์</p>
+          </div>
+        </div>
+
+        <div class="step-row">
+          <div class="step-circle">3</div>
+          <div>
+            <h3>ชำระ & ยืนยัน</h3>
+            <p>โอนเงิน แจ้งสลิป ยืนยันคิวผลิตได้เลย</p>
+          </div>
+        </div>
+
+        <div class="step-row">
+          <div class="step-circle">4</div>
+          <div>
+            <h3>ผลิตและตรวจงาน</h3>
+            <p>พิมพ์และไดคัท 1-2 ส่งรูปตรวจก่อนจัดส่ง</p>
+          </div>
+        </div>
+
+        <div class="step-row">
+          <div class="step-circle">5</div>
+          <div>
+            <h3>รับเลขพัสดุและรอรับสินค้า</h3>
+            <p>แพ็กอย่างดี ส่งทั่วไทย พร้อมเลขพัสดุแจ้งทันที</p>
+          </div>
+        </div>
+
+      </div>
+
+      <a href="https://lin.ee/Po3SnHc" target="_blank" class="steps-btn">
+        <i class="fa-brands fa-line"></i> เริ่มสั่งงานเลย
+      </a>
+
+      <p class="steps-note">ปรึกษาฟรี ไม่มีค่าใช้จ่าย</p>
+    </div>
+
+    <!-- RIGHT: PHONE -->
+    <div class="steps-right">
+      <img src="มือถือ.png" alt="phone" class="steps-phone">
+    </div>
+
+  </div>
+</section>
+
+
+<div class="ig-banner-wrapper">
+  
+  <div class="ig-banner-container">
+
+    <div class="ig-card flex items-center justify-between p-10 flex-col lg:flex-row">
+<img src="แมว.png" class="ig-cat show">
+
+<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" class="ig-head">
+      <!-- TEXT -->
+      <div class="text-center lg:text-left max-w-2xl">
+        <h2 style="font-size:48px; font-weight:900; margin-bottom:20px;">
+          ดูผลงานจริง<br>
+          <span style="background: linear-gradient(to right,#fff,#ffd1f0); -webkit-background-clip:text; color:transparent;">
+            ผ่าน Instagram
+          </span>
+        </h2>
+
+        <p style="font-size:18px; margin-bottom:30px;">
+          อัปเดตงานใหม่ รีวิวลูกค้า และไอเดียสติ๊กเกอร์ทุกวัน
+        </p>
+
+        <!-- BUTTON -->
+        <a href="https://instagram.com/" target="_blank" class="ig-btn">
+          <i class="fa-brands fa-instagram text-2xl"></i>
+          ไปที่ Instagram
+
+          <div class="emoji-float">🔥</div>
+          <div class="emoji-float">💖</div>
+          <div class="emoji-float">✨</div>
+        </a>
+      </div>
+
+ <div class="ig-image-wrap">
+  <img src="QRline.png" class="ig-img">
+</div>
+
+    </div>
+
+  </div>
+</div>
+
+
+<div class="footer" id="footer">
+  <div class="footer-container">
+
+    <!-- ฝั่งซ้าย -->
+    <div class="footer-box">
+      <h2>Sticker Pro</h2>
+      <p>สติ๊กเกอร์คุณภาพสูง ราคาคุ้มค่า พร้อมออกแบบฟรี</p>
+    </div>
+
+    <!-- ฝั่งขวา -->
+<div class="footer-box">
+  <h3>เมนู</h3>
+  <a href="#hero">หน้าหลัก</a>
+  <a href="#product">สินค้า</a>
+  <a href="#order-steps">ขั้นตอนการสั่ง</a>
+  <a href="#footer">ติดต่อ</a>
+</div>
+      <h3 style="margin-top:10px;">ติดต่อ</h3>
+      <p>099-xxx-xxxx</p>
+      <p>เชียงใหม่</p>
+      <p>LINE: @yourline</p>
+
+      <h3 style="margin-top:10px;">ติดตามเรา</h3>
+      <div class="social-icons">
+        <a href="#"><img src="download.png"></a>
+        <a href="#"><img src="imge/ig.png"></a>
+        <a href="#"><img src="line.png"></a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Sticker Pro | All Rights Reserved
+  </div>
+</div>
+
+<script src="main.js"></script>
+</body>
+</html>

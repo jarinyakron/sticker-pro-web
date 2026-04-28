@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>คลังสติ๊กเกอร์</title>
+
+  <style>
+    body {
+      background: #fff8e1;
+      font-family: 'Mitr', sans-serif;
+      margin: 0;
+    }
+
+    .page-header {
+      text-align: center;
+      padding: 80px 20px 40px;
+    }
+
+    .page-header h1 {
+      font-size: 42px;
+      color: #b8860b;
+      font-weight: 400;
+    }
+
+    .page-header p {
+      color: #666;
+    }
+
+    .sticker-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 25px;
+      padding: 40px 8%;
+    }
+
+    .sticker-card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .sticker-card:hover {
+      transform: translateY(-10px) scale(1.05);
+    }
+
+    .sticker-card img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 15px;
+    }
+
+    .sticker-card h3 {
+      margin: 10px 0 5px;
+      color: #b8860b;
+      font-weight: 400;
+    }
+
+    .sticker-card p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    .back-btn {
+      display: block;
+      width: 200px;
+      margin: 40px auto;
+      padding: 12px;
+      border-radius: 12px;
+      background: gold;
+      text-align: center;
+      color: white;
+      text-decoration: none;
+    }
+
+    @media (max-width: 900px) {
+      .sticker-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 500px) {
+      .sticker-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page-header">
+  <h1>คลังสติ๊กเกอร์ทั้งหมด 💕</h1>
+  <p>เลือกแบบที่ใช่สำหรับแบรนด์คุณ</p>
+</div>
+
+<div class="sticker-grid">
+
+  <div class="sticker-card" onclick="goTo('pp-gloss')">
+    <img src="imge/stkgloss16.jpg">
+    <h3>PP เงา</h3>
+    <p>ผิวเงา กันน้ำ สีสด</p>
+  </div>
+
+  <div class="sticker-card" onclick="goTo('pp-matte')">
+    <img src="imge/stkgloss16.jpg">
+    <h3>PP ด้าน</h3>
+    <p>หรู ไม่สะท้อนแสง</p>
+  </div>
+
+  <div class="sticker-card" onclick="goTo('paper')">
+    <img src="imge/stkgloss16.jpg">
+    <h3>กระดาษ</h3>
+    <p>ราคาประหยัด</p>
+  </div>
+
+  <div class="sticker-card" onclick="goTo('clear')">
+    <img src="imge/stkgloss16.jpg">
+    <h3>ใส</h3>
+    <p>โชว์สินค้าได้</p>
+  </div>
+
+  <div class="sticker-card" onclick="goTo('white-ink')">
+    <img src="imge/stkgloss16.jpg">
+    <h3>หมึกขาว</h3>
+    <p>สีเด่นแม้พื้นใส</p>
+  </div>
+
+  <div class="sticker-card" onclick="goTo('3m')">
+    <img src="imge/stkgloss16.jpg">
+    <h3>3M</h3>
+    <p>ทนแดด ทนน้ำ</p>
+  </div>
+
+  <div class="sticker-card" onclick="goTo('gold')">
+    <img src="imge/stkgloss16.jpg">
+    <h3>ทอง</h3>
+    <p>หรูหรา</p>
+  </div>
+
+  <div class="sticker-card" onclick="goTo('silver')">
+    <img src="imge/stkgloss16.jpg">
+    <h3>เงิน</h3>
+    <p>พรีเมียม</p>
+  </div>
+
+</div>
+
+<a href="index.html" class="back-btn">← กลับหน้าหลัก</a>
+
+<script>
+function goTo(type) {
+  window.location.href = "sticker-detail.html?type=" + type;
+}
+</script>
+
+</body>
+</html>
