@@ -32,15 +32,24 @@
 </head>
 
 <body>
-
-<!-- ===== NAVBAR ===== -->
 <div class="navbar">
-  <div class="logo">Sticker Pro</div>
-  <div class="nav-links">
+  <!-- ซ้าย (PC ใช้) -->
+  <div class="logo logo-left">Sticker Pro</div>
+
+  <div class="nav-links" id="navLinks">
     <a href="#hero" class="active">หน้าหลัก</a>
     <a href="#product">สินค้า</a>
-<a href="#order-steps">ขั้นตอนการสั่ง</a>
+    <a href="#order-steps">ขั้นตอนการสั่ง</a>
     <a href="#footer">ติดต่อ</a>
+  </div>
+
+  <!-- ขวา -->
+  <div class="nav-right">
+    <!-- โลโก้สำหรับมือถือ -->
+    <div class="logo-mobile">Sticker Pro</div>
+
+    <img src="pro01.jpg" class="logo-img" alt="logo">
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
   </div>
 </div>
 <section class="hero" id="hero">
