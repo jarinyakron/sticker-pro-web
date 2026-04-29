@@ -10,7 +10,80 @@ body {
   background: #fff8e1;
   overflow-x: hidden;
 }
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+/* กลุ่มขวา */
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* รูปโลโก้ */
+.logo-img {
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  border-radius: 50%; /* กลมๆ น่ารัก */
+}
+
+/* hamburger */
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* 📱 มือถือ */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+  }
+}
+/* ซ่อนของมือถือก่อน */
+.logo-mobile {
+  display: none;
+}
+
+/* 📱 มือถือ */
+@media (max-width: 768px) {
+
+  /* ซ่อนโลโก้ซ้าย */
+  .logo-left {
+    display: none;
+  }
+
+  /* แสดงคำด้านขวา */
+  .logo-mobile {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    color: #a08800; /* ชมพูน่ารัก */
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-left: auto; /* ดันไปขวาสุด */
+  }
+}
 /* ================================================
    NAVBAR
    ================================================ */
@@ -816,7 +889,7 @@ body {
   border-radius: 50%;
   background: linear-gradient(135deg, #ffd000, #ffaa00);
   color: #fff;
-  font-weight: 400;
+  font-weight: -1400;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -836,7 +909,7 @@ body {
   padding: 16px 40px;
   border-radius: 999px;
   font-size: 1.1rem;
-  font-weight: 400;
+  font-weight: 1400;
   text-decoration: none;
   box-shadow: 0 10px 25px rgba(0,195,0,0.4);
   position: relative;
@@ -863,13 +936,13 @@ body {
 .steps-phone {
   width: 550px;
   max-width: 100%;
-  filter: drop-shadow(0 25px 40px rgba(0,0,0,0.25));
+  filter: drop-shadow(0 25px 40px rgba(255, 251, 0, 0.25));
 }
 
 /* แมว steps */
 .steps-cat-wrap {
   position: absolute;
-  right: 40px;
+  right: -2px;
   bottom: 0;
   text-align: center;
   display: flex;
@@ -877,22 +950,26 @@ body {
   align-items: center;
   z-index: 2;
 }
-
+steps-cat-bubble
 .steps-cat { height: 500px; object-fit: contain; pointer-events: none; }
 
 .steps-cat-bubble {
   background: #ffd000;
   color: #111;
-  padding: 8px 18px;
+  padding: 7px 18px;
   border-radius: 20px;
   font-weight: 400;
-  margin-bottom: 10px;
+  margin-bottom: -60px;
   white-space: nowrap;
   box-shadow: 0 4px 12px rgba(255,200,0,0.4);
   animation: bubbleBounce 1.5s ease-in-out infinite;
   transform: translate(-50px, -250px);
 }
-
+@media (max-width: 768px) {
+  .steps-cat-bubble {
+    margin-bottom: -10px; /* ปรับใหม่ตามที่สวย */
+  }
+}
 .steps-cat-bubble::after {
   content: '';
   position: absolute;
@@ -926,7 +1003,7 @@ body {
   margin: 0 auto;
   padding: 20px 10px;
   position: relative;
-  z-index: 10;
+  z-index: 0;
 }
 
 .ig-card {
@@ -1911,9 +1988,93 @@ html {
 
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
 
 
+/* navbar พื้นฐาน */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  position: relative;
+}
 
+/* hamburger */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
+}
 
+/* 📱 มือถือ */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: #fff6c4;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
 
+  .nav-links a {
+    margin: 10px 0;
+    display: block;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+.navbar {
+  background: rgba(255, 255, 255, 0.85); /* ขาวขุ่น */
+  backdrop-filter: blur(10px); /* เบลอสวยๆ */
+  -webkit-backdrop-filter: blur(10px); /* รองรับ Safari */
+  border-radius: 20px;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: hsl(52, 100%, 91%);
+}
+
+header, .header, .top-bar {
+  background: transparent;
+}
+.container, .wrapper, header {
+  background: transparent !important;
+}
+.hero {
+  margin-top: 0;
+  padding-top: 80px; /* ดันลง */
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+body {
+  padding-top: -80px;
+}
